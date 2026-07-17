@@ -5,7 +5,7 @@
 /* ---- Layout ---- */
 .about__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: clamp(3rem, 6vw, 5rem);
   align-items: center;
 }
@@ -22,7 +22,7 @@
   line-height: 1.8;
   color: var(--color-text-secondary);
   margin-bottom: 1.25rem;
-  max-width: 540px;
+  max-width: 900px;
 }
 
 .about__bio--secondary {

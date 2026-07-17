@@ -106,13 +106,6 @@ export default function Skills() {
                         {skill.name}
                       </div>
                     </div>
-                    <div className="skills__bar-track">
-                      <motion.div
-                        className="skills__bar-fill"
-                        variants={barVariants}
-                        custom={skill.level}
-                      />
-                    </div>
                   </div>
                 ))}
               </div>
