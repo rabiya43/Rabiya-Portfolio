@@ -12,6 +12,7 @@ const projectsData = [
       'Built a fully local, air-gapped LLM agent with JSON function-calling schema and custom Python tools. The agent autonomously invokes tools, ingests data, and produces structured automation plans.',
     tags: ['Python', 'Ollama', 'Llama 3.2', 'Agentic AI'],
     featured: true,
+    link: 'https://github.com/rabiya43'
   },
   {
     number: '02',
@@ -22,6 +23,7 @@ const projectsData = [
       'Full-stack transport booking platform with C++ CGI backend handling dynamic input validation, fare calculation, and AJAX-powered seamless booking confirmations.',
     tags: ['C++', 'HTML/CSS', 'JavaScript', 'AJAX'],
     featured: false,
+    link: 'https://github.com/rabiya43'
   },
   {
     number: '03',
@@ -32,6 +34,7 @@ const projectsData = [
       'Image classification pipeline to recognize and categorize emojis with preprocessing, feature extraction, and iterative model tuning across multiple emoji classes.',
     tags: ['Python', 'ML', 'Computer Vision'],
     featured: false,
+    link: 'https://github.com/rabiya43'
   },
   {
     number: '04',
@@ -42,6 +45,7 @@ const projectsData = [
       'A recipe management application built with Create React App, featuring optimized production builds and component-based structure.',
     tags: ['React', 'JavaScript', 'CSS'],
     featured: false,
+    link: 'https://github.com/rabiya43/recipe-book'
   },
   {
     number: '05',
@@ -52,6 +56,7 @@ const projectsData = [
       'Google Docs-style collaborative editor supporting simultaneous multi-user access with role-based permissions and conflict-free shared document state.',
     tags: ['C++', 'Data Structures', 'Real-time'],
     featured: false,
+    link: 'https://github.com/rabiya43'
   },
 ];
 
@@ -133,7 +138,10 @@ export default function Projects() {
           animate={isInView ? 'visible' : 'hidden'}
         >
           {projectsData.map((project) => (
-            <motion.article
+            <motion.a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               key={project.number}
               className={`project-card glass-card${
                 project.featured ? ' project-card--featured' : ''
@@ -141,6 +149,7 @@ export default function Projects() {
               variants={cardVariants}
               onMouseMove={handleTilt}
               onMouseLeave={resetTilt}
+              style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}
             >
               {/* Gradient accent border on featured card */}
               {project.featured && <span className="project-card__accent" />}
@@ -171,7 +180,7 @@ export default function Projects() {
                   </span>
                 </div>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </motion.div>
       </div>
