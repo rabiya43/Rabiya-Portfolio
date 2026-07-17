@@ -227,63 +227,132 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  perspective: 1000px;
 }
 
-/* spinning gradient ring */
+/* spinning gradient ring — hidden now */
 .hero-photo-ring {
-  position: absolute;
-  width: 370px;
-  height: 370px;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    var(--color-rose),
-    var(--color-mauve),
-    var(--color-lavender),
-    var(--color-pink),
-    var(--color-rose)
-  );
-  animation: rotate-slow 8s linear infinite;
-  opacity: 0.7;
-  filter: blur(2px);
+  display: none;
 }
 
-/* glass frame around image */
+/* 3D portrait card */
 .hero-photo-frame {
   position: relative;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  padding: 5px;
-  background: var(--color-bg-glass);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  overflow: hidden;
+  width: 320px;
+  height: 420px;
+  border-radius: 24px;
+  padding: 4px;
+  background: linear-gradient(
+    135deg,
+    rgba(232, 160, 191, 0.6),
+    rgba(186, 144, 198, 0.3),
+    rgba(198, 131, 215, 0.6)
+  );
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(232, 160, 191, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+  overflow: visible;
   z-index: 1;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s ease;
 }
 
 .hero-photo-frame:hover {
-  /* override glass-card hover transform — keep photo still */
   transform: none;
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.55),
+    0 0 80px rgba(232, 160, 191, 0.25);
+}
+
+.hero-photo-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 21px;
+  overflow: hidden;
+  background: var(--color-bg-deep);
 }
 
 .hero-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  object-position: top center;
+  border-radius: 21px;
   display: block;
+  transition: transform 0.4s ease;
+}
+
+.hero-photo-frame:hover .hero-photo {
+  transform: scale(1.03);
+}
+
+/* floating name badge */
+.hero-photo-badge {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%) translateZ(40px);
+  background: rgba(18, 10, 25, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(232, 160, 191, 0.3);
+  border-radius: 50px;
+  padding: 0.55rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(232,160,191,0.15);
+  z-index: 10;
+}
+
+.hero-photo-badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+.hero-photo-badge__text {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.03em;
+}
+
+/* decorative corner accent */
+.hero-photo-accent {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,160,191,0.5) 0%, transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
 /* soft glow behind photo */
 .hero-photo-glow {
   position: absolute;
   width: 420px;
-  height: 420px;
-  border-radius: 50%;
+  height: 500px;
+  border-radius: 40%;
   background: radial-gradient(
-    circle,
-    rgba(232, 160, 191, 0.2) 0%,
-    rgba(198, 131, 215, 0.1) 40%,
+    ellipse,
+    rgba(232, 160, 191, 0.18) 0%,
+    rgba(198, 131, 215, 0.08) 40%,
     transparent 70%
   );
   animation: pulse-glow 4s ease-in-out infinite;
@@ -359,19 +428,14 @@
     justify-content: center;
   }
 
-  .hero-photo-ring {
-    width: 310px;
-    height: 310px;
-  }
-
   .hero-photo-frame {
-    width: 290px;
-    height: 290px;
+    width: 260px;
+    height: 340px;
   }
 
   .hero-photo-glow {
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 400px;
   }
 }
 
@@ -385,19 +449,14 @@
     font-size: clamp(2.2rem, 10vw, 3rem);
   }
 
-  .hero-photo-ring {
-    width: 260px;
-    height: 260px;
-  }
-
   .hero-photo-frame {
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: 290px;
   }
 
   .hero-photo-glow {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 350px;
   }
 
   .hero-cta {
@@ -416,18 +475,13 @@
 
 /* ── large desktops ── */
 @media (min-width: 1440px) {
-  .hero-photo-ring {
-    width: 420px;
-    height: 420px;
-  }
-
   .hero-photo-frame {
-    width: 400px;
-    height: 400px;
+    width: 360px;
+    height: 480px;
   }
 
   .hero-photo-glow {
-    width: 480px;
-    height: 480px;
+    width: 460px;
+    height: 560px;
   }
 }
