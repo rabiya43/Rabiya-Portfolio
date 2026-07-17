@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
 import profileImg from '../../assets/images/profile-hero.jpg';
 import './Hero.css';
@@ -75,6 +75,25 @@ const Hero = () => {
   const handleScrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // 3D tilt effect
+  const cardRef = useRef(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [12, -12]), { stiffness: 200, damping: 20 });
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-12, 12]), { stiffness: 200, damping: 20 });
+
+  const handleMouseMove = (e) => {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    x.set((e.clientX - rect.left) / rect.width - 0.5);
+    y.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
   };
 
   return (
@@ -168,17 +187,29 @@ const Hero = () => {
           variants={photoVariants}
           initial="hidden"
           animate="visible"
+          ref={cardRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
         >
-          {/* spinning gradient ring behind the image */}
-          <div className="hero-photo-ring" />
-
-          <div className="hero-photo-frame glass-card">
-            <img
-              src={profileImg}
-              alt="Rabiya Tahir — AI Engineer"
-              className="hero-photo"
-            />
-          </div>
+          <motion.div
+            className="hero-photo-frame glass-card"
+            style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+          >
+            <div className="hero-photo-inner">
+              <img
+                src={profileImg}
+                alt="Rabiya Tahir — AI Engineer"
+                className="hero-photo"
+              />
+            </div>
+            {/* floating badge */}
+            <div className="hero-photo-badge">
+              <span className="hero-photo-badge__dot" />
+              <span className="hero-photo-badge__text">Available for opportunities</span>
+            </div>
+            {/* corner accent glow */}
+            <div className="hero-photo-accent" />
+          </motion.div>
 
           {/* soft glow behind photo */}
           <div className="hero-photo-glow" />
