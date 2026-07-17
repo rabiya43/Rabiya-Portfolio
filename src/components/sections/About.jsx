@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import aboutImg from '../../assets/images/profile-about.jpg';
 import './About.css';
 
 const stats = [
@@ -108,27 +107,6 @@ export default function About() {
               ))}
             </motion.div>
           </div>
-
-          {/* ---- Photo Column ---- */}
-          <motion.div className="about__photo-col" variants={fadeLeft}>
-            {/* Decorative gradient blob */}
-            <div className="about__blob" aria-hidden="true" />
-
-            <div className="about__photo-frame">
-              <div className="about__photo-inner">
-                <img
-                  src={aboutImg}
-                  alt="Rabiya Tahir — AI Engineer"
-                  className="about__photo"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            {/* Corner decorations */}
-            <span className="about__corner about__corner--tl" aria-hidden="true" />
-            <span className="about__corner about__corner--br" aria-hidden="true" />
-          </motion.div>
         </motion.div>
       </div>
     </section>

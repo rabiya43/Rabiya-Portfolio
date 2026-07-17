@@ -35,11 +35,11 @@ const projectsData = [
   },
   {
     number: '04',
-    title: 'React Portfolio',
+    title: 'Recipe Book',
     tech: 'React',
     year: '2025',
     description:
-      'Responsive component-based portfolio site with dynamic client-side routing, reusable UI components, and scalable state management.',
+      'A recipe management application built with Create React App, featuring optimized production builds and component-based structure.',
     tags: ['React', 'JavaScript', 'CSS'],
     featured: false,
   },
