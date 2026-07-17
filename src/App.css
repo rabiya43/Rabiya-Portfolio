@@ -1,0 +1,84 @@
+/* ---- App-Level Styles ---- */
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-rose);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor--hover {
+  width: 40px;
+  height: 40px;
+  background: rgba(232, 160, 191, 0.2);
+  border: 1px solid rgba(232, 160, 191, 0.5);
+}
+
+.custom-cursor-trail {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(232, 160, 191, 0.3);
+  pointer-events: none;
+  z-index: 9997;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease-out;
+}
+
+.custom-cursor-trail--hover {
+  width: 56px;
+  height: 56px;
+  border-color: rgba(232, 160, 191, 0.15);
+}
+
+/* Loading Screen Enhancements */
+.loading-logo {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.loading-logo-accent {
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3rem;
+}
+
+.loading-logo-dot {
+  color: var(--color-rose);
+}
+
+/* Smooth scroll sections */
+main > section,
+main > div {
+  position: relative;
+}
+
+/* Global link hover cursor override */
+@media (hover: hover) {
+  a, button, .glass-card {
+    cursor: none;
+  }
+
+  * {
+    cursor: none;
+  }
+}
+
+/* Touch devices get normal cursors */
+@media (hover: none) {
+  * {
+    cursor: auto !important;
+  }
+}
