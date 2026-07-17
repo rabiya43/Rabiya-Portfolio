@@ -105,7 +105,6 @@ export default function Skills() {
                         {skill.icon && <skill.icon className="skills__item-icon" />}
                         {skill.name}
                       </div>
-                      <span className="skills__item-level">{skill.level}%</span>
                     </div>
                     <div className="skills__bar-track">
                       <motion.div

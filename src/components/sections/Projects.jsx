@@ -12,7 +12,6 @@ const projectsData = [
       'Built a fully local, air-gapped LLM agent with JSON function-calling schema and custom Python tools. The agent autonomously invokes tools, ingests data, and produces structured automation plans.',
     tags: ['Python', 'Ollama', 'Llama 3.2', 'Agentic AI'],
     featured: true,
-    link: 'https://github.com/rabiya43'
   },
   {
     number: '02',
@@ -23,7 +22,7 @@ const projectsData = [
       'Full-stack transport booking platform with C++ CGI backend handling dynamic input validation, fare calculation, and AJAX-powered seamless booking confirmations.',
     tags: ['C++', 'HTML/CSS', 'JavaScript', 'AJAX'],
     featured: false,
-    link: 'https://github.com/rabiya43'
+    link: 'https://github.com/muaazbinsalman/IntegratedTransportManagementSystem'
   },
   {
     number: '03',
@@ -34,7 +33,7 @@ const projectsData = [
       'Image classification pipeline to recognize and categorize emojis with preprocessing, feature extraction, and iterative model tuning across multiple emoji classes.',
     tags: ['Python', 'ML', 'Computer Vision'],
     featured: false,
-    link: 'https://github.com/rabiya43'
+    link: 'https://github.com/Rizwan-0905/EmojiDetector'
   },
   {
     number: '04',
@@ -56,7 +55,6 @@ const projectsData = [
       'Google Docs-style collaborative editor supporting simultaneous multi-user access with role-based permissions and conflict-free shared document state.',
     tags: ['C++', 'Data Structures', 'Real-time'],
     featured: false,
-    link: 'https://github.com/rabiya43'
   },
 ];
 
@@ -137,51 +135,57 @@ export default function Projects() {
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
         >
-          {projectsData.map((project) => (
-            <motion.a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={project.number}
-              className={`project-card glass-card${
-                project.featured ? ' project-card--featured' : ''
-              }`}
-              variants={cardVariants}
-              onMouseMove={handleTilt}
-              onMouseLeave={resetTilt}
-              style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}
-            >
-              {/* Gradient accent border on featured card */}
-              {project.featured && <span className="project-card__accent" />}
+          {projectsData.map((project) => {
+            const CardWrapper = project.link ? motion.a : motion.article;
+            const extraProps = project.link
+              ? { href: project.link, target: '_blank', rel: 'noopener noreferrer', style: { display: 'block', textDecoration: 'none', color: 'inherit' } }
+              : { style: { display: 'block', textDecoration: 'none', color: 'inherit' } };
 
-              {/* Large faded number */}
-              <span className="project-card__number">{project.number}</span>
+            return (
+              <CardWrapper
+                key={project.number}
+                className={`project-card glass-card${
+                  project.featured ? ' project-card--featured' : ''
+                }`}
+                variants={cardVariants}
+                onMouseMove={handleTilt}
+                onMouseLeave={resetTilt}
+                {...extraProps}
+              >
+                {/* Gradient accent border on featured card */}
+                {project.featured && <span className="project-card__accent" />}
 
-              <div className="project-card__body">
-                <div className="project-card__meta">
-                  <span className="project-card__tech">{project.tech}</span>
-                  <span className="project-card__year">{project.year}</span>
+                {/* Large faded number */}
+                <span className="project-card__number">{project.number}</span>
+
+                <div className="project-card__body">
+                  <div className="project-card__meta">
+                    <span className="project-card__tech">{project.tech}</span>
+                    <span className="project-card__year">{project.year}</span>
+                  </div>
+
+                  <h3 className="project-card__title">{project.title}</h3>
+                  <p className="project-card__desc">{project.description}</p>
+
+                  <div className="project-card__footer">
+                    <ul className="project-card__tags">
+                      {project.tags.map((tag) => (
+                        <li key={tag} className="project-card__tag">
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {project.link && (
+                      <span className="project-card__arrow" aria-hidden="true">
+                        →
+                      </span>
+                    )}
+                  </div>
                 </div>
-
-                <h3 className="project-card__title">{project.title}</h3>
-                <p className="project-card__desc">{project.description}</p>
-
-                <div className="project-card__footer">
-                  <ul className="project-card__tags">
-                    {project.tags.map((tag) => (
-                      <li key={tag} className="project-card__tag">
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <span className="project-card__arrow" aria-hidden="true">
-                    →
-                  </span>
-                </div>
-              </div>
-            </motion.a>
-          ))}
+              </CardWrapper>
+            );
+          })}
         </motion.div>
       </div>
     </section>

@@ -9,9 +9,9 @@
   --color-bg-deep: #0D0015;
   --color-bg-primary: #120A1F;
   --color-bg-secondary: #1A0E2E;
-  --color-bg-card: rgba(255, 255, 255, 0.04);
-  --color-bg-card-hover: rgba(255, 255, 255, 0.08);
-  --color-bg-glass: rgba(255, 255, 255, 0.06);
+  --color-bg-card: rgba(255, 255, 255, 0.08);
+  --color-bg-card-hover: rgba(255, 255, 255, 0.12);
+  --color-bg-glass: rgba(255, 255, 255, 0.1);
 
   /* Accent Colors */
   --color-rose: #E8A0BF;
@@ -86,7 +86,7 @@ body {
   color: var(--color-text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* Custom scrollbar */
