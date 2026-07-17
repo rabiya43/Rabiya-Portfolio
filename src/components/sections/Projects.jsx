@@ -22,6 +22,7 @@ const projectsData = [
       'Full-stack transport booking platform with C++ CGI backend handling dynamic input validation, fare calculation, and AJAX-powered seamless booking confirmations.',
     tags: ['C++', 'HTML/CSS', 'JavaScript', 'AJAX'],
     featured: false,
+    link: 'https://github.com/muaazbinsalman/IntegratedTransportManagementSystem'
   },
   {
     number: '03',
@@ -32,6 +33,7 @@ const projectsData = [
       'Image classification pipeline to recognize and categorize emojis with preprocessing, feature extraction, and iterative model tuning across multiple emoji classes.',
     tags: ['Python', 'ML', 'Computer Vision'],
     featured: false,
+    link: 'https://github.com/Rizwan-0905/EmojiDetector'
   },
   {
     number: '04',
