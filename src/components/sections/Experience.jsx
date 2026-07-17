@@ -123,7 +123,16 @@ function TimelineCard({ experience, index }) {
               transition={{ delay: 0.4 + i * 0.08, duration: 0.4 }}
             >
               <span className="exp-card__bullet" />
-              {detail}
+              {typeof detail === 'string' && detail.includes(':') ? (
+                <span>
+                  <strong style={{ color: 'var(--color-rose)', fontWeight: 600 }}>
+                    {detail.substring(0, detail.indexOf(':') + 1)}
+                  </strong>
+                  {detail.substring(detail.indexOf(':') + 1)}
+                </span>
+              ) : (
+                detail
+              )}
             </motion.li>
           ))}
         </ul>

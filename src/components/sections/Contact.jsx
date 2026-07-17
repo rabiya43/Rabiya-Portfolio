@@ -32,7 +32,6 @@ const leadership = [
 
 const contactLinks = [
   { icon: FaEnvelope, label: 'Email', value: 'rabiyyatahir@gmail.com', href: 'mailto:rabiyyatahir@gmail.com' },
-  { icon: FaPhone, label: 'Phone', value: '0304-5222319', href: 'tel:+923045222319' },
   { icon: FaLinkedinIn, label: 'LinkedIn', value: 'linkedin.com/in/rabiya-tahir', href: 'https://linkedin.com/in/rabiya-tahir' },
   { icon: FaGithub, label: 'GitHub', value: 'github.com/rabiya43', href: 'https://github.com/rabiya43' },
   { icon: FaMapMarkerAlt, label: 'Location', value: 'Lahore, Pakistan', href: null },
