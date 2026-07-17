@@ -1,0 +1,187 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1rem 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar--scrolled {
+  background: rgba(13, 0, 21, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(232, 160, 191, 0.08);
+  padding: 0.75rem 0;
+}
+
+.navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.navbar__logo:hover {
+  opacity: 0.8;
+}
+
+.navbar__logo-accent {
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.8rem;
+}
+
+.navbar__logo-dot {
+  color: var(--color-rose);
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navbar__link {
+  position: relative;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-full);
+  transition: all var(--transition-fast);
+}
+
+.navbar__link:hover {
+  color: var(--color-text-primary);
+}
+
+.navbar__link--active {
+  color: var(--color-text-primary);
+}
+
+.navbar__link-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-rose);
+  box-shadow: 0 0 8px rgba(232, 160, 191, 0.6);
+}
+
+.navbar__cta {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--border-radius-full);
+  background: linear-gradient(135deg, rgba(232, 160, 191, 0.15), rgba(186, 144, 198, 0.08));
+  border: 1px solid rgba(232, 160, 191, 0.2);
+  color: var(--color-rose);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.navbar__cta:hover {
+  background: linear-gradient(135deg, rgba(232, 160, 191, 0.25), rgba(186, 144, 198, 0.15));
+  border-color: rgba(232, 160, 191, 0.4);
+  box-shadow: 0 0 20px rgba(232, 160, 191, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Hamburger */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar__hamburger--open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar__hamburger--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__hamburger--open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+.navbar__mobile {
+  overflow: hidden;
+  background: rgba(13, 0, 21, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(232, 160, 191, 0.08);
+  padding: 1rem 0;
+}
+
+.navbar__mobile-link {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: 0.75rem clamp(1.5rem, 4vw, 3rem);
+  transition: all var(--transition-fast);
+}
+
+.navbar__mobile-link:hover {
+  color: var(--color-rose);
+  background: rgba(232, 160, 191, 0.05);
+}
+
+.navbar__mobile-cta {
+  display: inline-block;
+  margin: 1rem clamp(1.5rem, 4vw, 3rem);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius-full);
+  background: var(--gradient-hero);
+  color: #0D0015;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .navbar__links,
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+}
