@@ -8,65 +8,50 @@ const projectsData = [
     title: 'Local Autonomous Tool-Use Agent',
     tech: 'Python, Ollama, Llama 3.2',
     year: '2026',
-    description:
-      'Built a fully local, air-gapped LLM agent with JSON function-calling schema and custom Python tools. The agent autonomously invokes tools, ingests data, and produces structured automation plans.',
+    description: 'Built a fully local, air-gapped LLM agent with JSON function-calling schema and custom Python tools. The agent autonomously invokes tools, ingests data, and produces structured automation plans.',
     tags: ['Python', 'Ollama', 'Llama 3.2', 'Agentic AI'],
     featured: true,
   },
   {
     number: '02',
-    title: 'Integrated Transport Management System',
-    tech: 'C++, HTML/CSS/JS',
-    year: '2025',
-    description:
-      'Full-stack transport booking platform with C++ CGI backend handling dynamic input validation, fare calculation, and AJAX-powered seamless booking confirmations.',
-    tags: ['C++', 'HTML/CSS', 'JavaScript', 'AJAX'],
+    title: 'Prompt Injection Guardrail',
+    tech: 'Python, FastAPI, React, Docker',
+    year: '2026',
+    description: 'Built a full-stack guardrail layer that sits between an LLM agent and external content, using a dual-layer FastAPI pipeline (heuristics + LLM judge) to detect prompt injection attempts before they reach the agent’s context window. Includes an eval dashboard computing precision, recall, and F1 against synthetic attack vectors, containerized with Docker and CI/CD via GitHub Actions.',
+    tags: ['Python', 'FastAPI', 'React', 'Docker', 'LLM Guardrail'],
     featured: false,
-    link: 'https://github.com/muaazbinsalman/IntegratedTransportManagementSystem'
+    link: 'https://github.com/rabiya43/Prompt-injection-guardrail',
   },
   {
     number: '03',
     title: 'Emoji Detector',
     tech: 'Python, ML',
     year: '2025',
-    description:
-      'Image classification pipeline to recognize and categorize emojis with preprocessing, feature extraction, and iterative model tuning across multiple emoji classes.',
+    description: 'Image classification pipeline to recognize and categorize emojis with preprocessing, feature extraction, and iterative model tuning across multiple emoji classes.',
     tags: ['Python', 'ML', 'Computer Vision'],
     featured: false,
-    link: 'https://github.com/Rizwan-0905/EmojiDetector'
+    link: 'https://github.com/Rizwan-0905/EmojiDetector',
   },
   {
     number: '04',
     title: 'Recipe Book',
     tech: 'React',
     year: '2025',
-    description:
-      'A recipe management application built with Create React App, featuring optimized production builds and component-based structure.',
+    description: 'A recipe management application built with Create React App, featuring optimized production builds and component-based structure.',
     tags: ['React', 'JavaScript', 'CSS'],
     featured: false,
-    link: 'https://github.com/rabiya43/recipe-book'
+    link: 'https://github.com/rabiya43/recipe-book',
   },
   {
     number: '05',
-    title: 'Collaborative Text Editor',
-    tech: 'C++',
-    year: '2024',
-    description:
-      'Google Docs-style collaborative editor supporting simultaneous multi-user access with role-based permissions and conflict-free shared document state.',
-    tags: ['C++', 'Data Structures', 'Real-time'],
+    title: 'XAI Medical Decision Support System',
+    tech: 'Python, scikit-learn, SHAP, FastAPI, Streamlit',
+    year: '2026',
+    description: 'Explainable AI system for medical decision support using SHAP for model explanations, fairness analysis, and an interactive dashboard built with FastAPI and Streamlit.',
+    tags: ['Python', 'scikit-learn', 'SHAP', 'FastAPI', 'Streamlit'],
     featured: false,
+    link: 'https://github.com/1amIbrahim/XAI',
   },
-    {
-        number: '06',
-        title: 'Prompt Injection Guardrail',
-        tech: 'Python, FastAPI, React, Docker',
-        year: '2026',
-        description:
-          'Built a full-stack guardrail layer that sits between an LLM agent and external content, using a dual-layer FastAPI pipeline (heuristics + LLM judge) to detect prompt injection attempts before they reach the agent’s context window. Built an Eval Dashboard computing Precision, Recall, and F1 against hundreds of synthetic attack vectors (Base64 encoding, roleplay hijacks, system overrides), containerized with Docker and CI/CD via GitHub Actions.',
-        tags: ['Python', 'FastAPI', 'React', 'Docker', 'LLM Guardrail'],
-        featured: false,
-        link: 'https://github.com/rabiya43/Prompt-injection-guardrail',
-    },
 ];
 
 /* ---- Animation variants ---- */

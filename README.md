@@ -2,7 +2,7 @@
 
 > A modern, interactive personal portfolio built with React + Vite, featuring 3D animations, glassmorphism design, and a fully responsive layout.
 
-🌐 **Live Site:** [View Portfolio on Vercel](https://rabiya-portfolio.vercel.app)
+🌐 **Live Site:** [View Portfolio on Vercel](https://rabiya-portfolio-silk.vercel.app/)
 
 ---
 
