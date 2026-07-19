@@ -56,6 +56,17 @@ const projectsData = [
     tags: ['C++', 'Data Structures', 'Real-time'],
     featured: false,
   },
+    {
+        number: '06',
+        title: 'Prompt Injection Guardrail',
+        tech: 'Python, FastAPI, React, Docker',
+        year: '2026',
+        description:
+          'Built a full-stack guardrail layer that sits between an LLM agent and external content, using a dual-layer FastAPI pipeline (heuristics + LLM judge) to detect prompt injection attempts before they reach the agent’s context window. Built an Eval Dashboard computing Precision, Recall, and F1 against hundreds of synthetic attack vectors (Base64 encoding, roleplay hijacks, system overrides), containerized with Docker and CI/CD via GitHub Actions.',
+        tags: ['Python', 'FastAPI', 'React', 'Docker', 'LLM Guardrail'],
+        featured: false,
+        link: 'https://github.com/rabiya43/Prompt-injection-guardrail',
+    },
 ];
 
 /* ---- Animation variants ---- */
