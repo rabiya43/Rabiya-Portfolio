@@ -143,7 +143,6 @@ const Hero = () => {
 
             <a
               href="/Rabiya_Tahir_Resume.pdf"
-              download="Rabiya_Tahir_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn--outline"
