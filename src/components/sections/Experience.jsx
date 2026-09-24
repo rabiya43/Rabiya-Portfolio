@@ -13,6 +13,7 @@ const experiences = [
     details: [
       'AI Trainer: Evaluated LLM code generation for logical consistency, security compliance, and task accuracy; contributed to RLHF pipelines',
       'Prompt Engineer (Anthropic): Executed and analyzed prompt-response cycles using GitHub-based tooling',
+      'NVIDIA Multi-App Task QA: Audited LLM task prompts against a 33-rule compliance framework, processing ~16 tasks/day',
       'LLM Systems Developer: Designed domain-specific interaction frameworks for LLM agents including policies, tools/APIs, database schema',
       'Data Annotator (Meta): Annotated structured video datasets for LLM training pipelines',
       'Agent Evaluator (Meta – CUA): Evaluated computer-use agents for real-world task execution',
@@ -26,7 +27,7 @@ const experiences = [
     location: 'Lahore',
     details: [
       'Built economic class classifier using LightGBM + Random Forest ensemble with threshold tuning',
-      'Macro F1: 0.7325, Middle F1: 0.7050',
+      'Macro F1: 0.7325',
       'Engineered 198 bag-level features; improved middle-class recall by +46%',
     ],
   },
@@ -37,9 +38,25 @@ const experiences = [
     date: 'Feb 2025 – Jun 2025',
     location: 'Lahore',
     details: [
-      'Conducted lab sessions: SQL, relational algebra, normalization, transaction management',
-      'Graded assignments and provided one-on-one academic support',
+      'Mentored 40+ undergraduates in relational database design, SQL, and query optimization',
+      'Held office hours and graded assignments and exams',
     ],
+  },
+  {
+    id: 4,
+    company: 'GDG ITU',
+    role: 'Management Head',
+    date: '2024',
+    location: 'Lahore',
+    details: ['Organized and managed CodeRush 2025, a campus-wide ML competition'],
+  },
+  {
+    id: 5,
+    company: 'EMS ITU',
+    role: 'Vice President',
+    date: '2024',
+    location: 'Lahore',
+    details: ['Managed society operations and led execution of events including bonfires and welcome parties'],
   },
 ];
 

@@ -4,6 +4,7 @@ import './About.css';
 const stats = [
   { value: '3+', label: 'Years Coding' },
   { value: '5+', label: 'AI Projects' },
+  { value: 'FYP', label: 'VLM Security' },
   { value: '3rd', label: 'ML Competition' },
   { value: 'TA', label: 'DBMS Course' },
 ];
