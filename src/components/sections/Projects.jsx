@@ -182,8 +182,11 @@ export default function Projects() {
                     </ul>
 
                     {project.link && (
-                      <span className="project-card__arrow" aria-hidden="true">
-                        →
+                      <span className="project-card__link">
+                        View on GitHub
+                        <span className="project-card__arrow" aria-hidden="true">
+                          ↗
+                        </span>
                       </span>
                     )}
                   </div>

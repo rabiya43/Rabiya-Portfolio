@@ -198,6 +198,44 @@
   border-color: rgba(232, 160, 191, 0.4);
 }
 
+/* ---- "View on GitHub" link label ---- */
+.project-card__link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-rose);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.project-card:hover .project-card__link {
+  color: var(--color-pink);
+}
+
+/* ---- "View on GitHub" link label ---- */
+.project-card__link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-rose);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.project-card:hover .project-card__link {
+  color: var(--color-pink);
+}
+
 /* ---- Arrow indicator ---- */
 .project-card__arrow {
   flex-shrink: 0;
