@@ -1,6 +1,6 @@
-# Rabiya Tahir — Portfolio
+# Rabiya Tahir — AI Engineer Portfolio
 
-Personal portfolio built with React and Vite.
+A personal portfolio built with React and Vite, with a 3D animated background, frosted-glass cards and a layout that works on any screen size.
 
 **Live site:** [rabiya-portfolio-silk.vercel.app](https://rabiya-portfolio-silk.vercel.app/)
 
@@ -8,41 +8,47 @@ Personal portfolio built with React and Vite.
 
 ## Features
 
-- Mouse-tracking tilt effect on the hero profile card (Framer Motion)
-- Animated experience timeline
-- Project cards that link to GitHub repos where available
-- Downloadable resume
-- Responsive layout for mobile, tablet, and desktop
-- Dark theme with a purple/rose palette
+- **3D background**: floating shapes and particles drawn with three.js (React Three Fiber)
+- **Tilting profile card**: the hero photo follows the mouse (Framer Motion)
+- **Typewriter subtitle** in the hero section
+- **Experience timeline** with cards alternating left and right
+- **Project cards** that link to GitHub where the code is public
+- **Skills grid** of languages, AI and ML tools, and frameworks
+- **Resume** that opens in a new tab
+- **Scroll animations** as each section comes into view
+- **Responsive** on mobile, tablet and desktop
+- **Dark theme** in a purple and rose palette
 
 ---
 
-## Tech Stack
+## Tech stack
 
 | Category | Technology |
 |---|---|
 | Framework | React 18 + Vite |
 | Animations | Framer Motion |
-| 3D Graphics | @react-three/fiber + @react-three/drei |
+| 3D graphics | three.js with @react-three/fiber and @react-three/drei |
 | Icons | react-icons |
-| Styling | Vanilla CSS |
-| Deployment | Vercel |
+| Styling | Plain CSS |
+| Hosting | Vercel |
 
 ---
 
-## Project Structure
+## Project structure
 
 ```
 Rabiya-Portfolio/
 ├── public/
-│   ├── Rabiya_Tahir_Resume.pdf
+│   ├── Rabiya_Tahir_Resume.pdf   # the resume the site links to
+│   ├── favicon.svg
 │   └── icons.svg
 ├── src/
-│   ├── assets/images/
+│   ├── assets/images/            # profile photos
 │   ├── components/
-│   │   ├── 3d/
-│   │   ├── sections/    # Hero, About, Experience, Projects, Skills, Contact
-│   │   └── ui/          # Navbar
+│   │   ├── 3d/                   # Scene3D: the animated background
+│   │   ├── sections/             # Hero, About, Experience, Projects, Skills, Contact
+│   │   └── ui/                   # Navbar
+│   ├── App.jsx
 │   └── main.jsx
 ├── index.html
 └── vite.config.js
@@ -50,9 +56,9 @@ Rabiya-Portfolio/
 
 ---
 
-## Getting Started
+## Getting started
 
-Requires Node.js 18+ and npm.
+Requires Node.js 18 or later.
 
 ```bash
 git clone https://github.com/rabiya43/Rabiya-Portfolio.git
@@ -61,9 +67,9 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173).
+Then open [http://localhost:5173](http://localhost:5173).
 
-Production build:
+To build for production:
 
 ```bash
 npm run build
@@ -73,19 +79,23 @@ npm run build
 
 ## Sections
 
-| Section | Description |
+| Section | What's in it |
 |---|---|
-| Hero | Name, roles, resume download, portrait card |
-| About | Bio and highlights |
-| Experience | Turing, ITU Teaching Assistant, CodeRush 2026, leadership roles |
-| Projects | Visual Prompt Injection Defense (FYP), Local Tool-Use Agent, Prompt Injection Guardrail, XAI Medical System, and more |
-| Skills | Languages, AI/ML, tools |
-| Contact | Email, GitHub, LinkedIn |
+| **Hero** | Name, typewriter subtitle, links, 3D tilting portrait |
+| **About** | Bio and highlights: years coding, AI projects, final-year project (VLM security), ML competition result, DBMS teaching assistant |
+| **Experience** | Turing (via Swift Solutions), GDG ITU CodeRush 2026, Teaching Assistant at ITU, GDG ITU, EMS ITU |
+| **Projects** | Visual Prompt Injection Defense for Vision-Language Models (FYP), Local Autonomous Tool-Use Agent, Prompt Injection Guardrail, Emoji Detector, Recipe Book, XAI Medical Decision Support System |
+| **Skills** | Languages, AI and ML tools, frameworks |
+| **Contact** | Email, GitHub and LinkedIn |
 
 ---
 
 ## Contact
 
-- Email: rabiyyatahir@gmail.com
-- LinkedIn: [linkedin.com/in/rabiya-tahir](https://linkedin.com/in/rabiya-tahir)
-- GitHub: [github.com/rabiya43](https://github.com/rabiya43)
+- **Email:** rabiyyatahir@gmail.com
+- **LinkedIn:** [linkedin.com/in/rabiya-tahir](https://linkedin.com/in/rabiya-tahir)
+- **GitHub:** [github.com/rabiya43](https://github.com/rabiya43)
+
+---
+
+Designed and built by Rabiya Tahir, 2026.
