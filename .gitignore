@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Resume: where npm run resume copies the PDF on this computer
+resume/copy-targets.json

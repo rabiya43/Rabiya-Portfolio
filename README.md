@@ -38,6 +38,9 @@ A personal portfolio built with React and Vite, with a 3D animated background, f
 
 ```
 Rabiya-Portfolio/
+├── resume/
+│   └── Rabiya_Tahir_Resume.tex   # the resume's source (npm run resume builds the PDF)
+├── scripts/build-resume.mjs
 ├── public/
 │   ├── Rabiya_Tahir_Resume.pdf   # the resume the site links to
 │   ├── favicon.svg
@@ -74,6 +77,20 @@ To build for production:
 ```bash
 npm run build
 ```
+
+---
+
+## Updating the resume
+
+The resume is written in LaTeX: `resume/Rabiya_Tahir_Resume.tex` is the only file to edit.
+
+```bash
+npm run resume
+```
+
+This builds the PDF with [Tectonic](https://tectonic-typesetting.github.io) and saves it as `public/Rabiya_Tahir_Resume.pdf`, which the site's resume button opens. It also copies the PDF to any folders listed in `resume/copy-targets.json` (a file on your own computer, not in git; see `copy-targets.example.json`). Commit and push `public/` to update the live site.
+
+The `.tex` also works in Overleaf with pdfLaTeX.
 
 ---
 
