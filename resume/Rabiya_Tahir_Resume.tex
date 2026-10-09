@@ -31,7 +31,7 @@
 
 \ifPDFTeX\pdfgentounicode=1\fi
 
-\newcommand{\resumeItem}[1]{\item \small{#1 \vspace{-1pt}}}
+\newcommand{\resumeItem}[1]{\item \small{#1 \vspace{-3pt}}}
 
 \newcommand{\resumeSubheading}[4]{
 \vspace{-2pt}\item
@@ -114,9 +114,15 @@
 \resumeProjectHeading
 {\textbf{Visual Prompt Injection Defense for Vision-Language Models} $|$ Python, PyTorch, FastAPI, Docker}{Ongoing FYP, 2026 -- 2027}
 \resumeItemListStart
-\resumeItem{Designing a guardrail that screens screenshots for hidden/injected instructions before they reach a vision-language agent, preventing attackers from hijacking agent actions via manipulated images.}
-\resumeItem{Built Layer 1 anomaly detector (ResNet50 patch embeddings + PatchCore memory bank, CVPR 2022) evaluated on 800 benign and 510 attack screenshots across 4 datasets.}
-\resumeItem{Achieved 55.83\% detection rate at 10\% FPR on visual prompt injection attacks, a 200x gain over an FFT baseline (0.28\%).}
+\resumeItem{Designing a dual-layer guardrail that screens images for embedded/injected instructions before they reach a vision-language agent, preventing attackers from hijacking agent actions via manipulated images.}
+\resumeItem{Benchmarked three Layer 1 image filters (FFT, PatchCore CVPR 2022, WinCLIP CVPR 2023) on CPU across 4 datasets, using paired clean/injected controls to separate true text detection from image-type mismatch.}
+\resumeItem{PatchCore (photo memory bank) detected embedded text at AUROC 0.970 (blank-band control 0.501) vs.\ 0.28\% for FFT at 10\% FPR; zero-shot WinCLIP reached F1 0.76 on 940 images, beating a 3-method ensemble (F1 0.72).}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Live Wallpaper Dashboard} $|$ Electron, JavaScript, Win32 API, Google Calendar API}{2026}
+\resumeItemListStart
+\resumeItem{Built and shipped a Windows app rendering a live dashboard (clock, weather, calendar, alarms) behind desktop icons, with natural-language alarm parsing and Google Calendar OAuth sync; auto-updating releases via GitHub Actions CI/CD.}
 \resumeItemListEnd
 
 \resumeProjectHeading
@@ -144,17 +150,15 @@
 
 \section{Leadership}
 \resumeSubHeadingListStart
-\resumeSubheading
-{GDG ITU}{2024}
-{Management Head}{Lahore}
+\resumeProjectHeading
+{\textbf{GDG ITU} $|$ \textit{Management Head}}{2024--2025}
 \resumeItemListStart
 \resumeItem{Organized and managed CodeRush 2025, a campus-wide ML competition.}
 \resumeItemListEnd
-\resumeSubheading
-{EMS ITU}{2024}
-{Vice President}{Lahore}
+\resumeProjectHeading
+{\textbf{EMS ITU} $|$ \textit{Vice President}}{2024--2025}
 \resumeItemListStart
-\resumeItem{Managed society operations and led execution of events including bonfires and welcome parties.}
+\resumeItem{Managed society operations and led events including bonfires and welcome parties.}
 \resumeItemListEnd
 \resumeSubHeadingListEnd
 

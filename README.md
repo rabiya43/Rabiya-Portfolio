@@ -101,7 +101,7 @@ The `.tex` also works in Overleaf with pdfLaTeX.
 | **Hero** | Name, typewriter subtitle, links, 3D tilting portrait |
 | **About** | Bio and highlights: years coding, AI projects, final-year project (VLM security), ML competition result, DBMS teaching assistant |
 | **Experience** | Turing (via Swift Solutions), GDG ITU CodeRush 2026, Teaching Assistant at ITU, GDG ITU, EMS ITU |
-| **Projects** | Visual Prompt Injection Defense for Vision-Language Models (FYP), Local Autonomous Tool-Use Agent, Prompt Injection Guardrail, Emoji Detector, Recipe Book, XAI Medical Decision Support System |
+| **Projects** | Visual Prompt Injection Defense for Vision-Language Models (FYP), Live Wallpaper Dashboard, Local Autonomous Tool-Use Agent, Prompt Injection Guardrail, Emoji Detector, Recipe Book, XAI Medical Decision Support System |
 | **Skills** | Languages, AI and ML tools, frameworks |
 | **Contact** | Email, GitHub and LinkedIn |
 
