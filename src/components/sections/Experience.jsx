@@ -46,7 +46,7 @@ const experiences = [
     id: 4,
     company: 'GDG ITU',
     role: 'Management Head',
-    date: '2024',
+    date: '2024 – 2025',
     location: 'Lahore',
     details: ['Organized and managed CodeRush 2025, a campus-wide ML competition'],
   },
@@ -54,9 +54,9 @@ const experiences = [
     id: 5,
     company: 'EMS ITU',
     role: 'Vice President',
-    date: '2024',
+    date: '2024 – 2025',
     location: 'Lahore',
-    details: ['Managed society operations and led execution of events including bonfires and welcome parties'],
+    details: ['Managed society operations and led events including bonfires and welcome parties'],
   },
 ];
 

@@ -1,0 +1,174 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{iftex}
+% pdfLaTeX (Overleaf) needs these for copyable text; XeTeX (npm run resume) does it by itself
+\ifPDFTeX\input{glyphtounicode}\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% margins
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1.4in}
+\addtolength{\topmargin}{-.9in}
+\addtolength{\textheight}{1.9in}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\normalsize\bfseries
+}{}{0em}{}[\titlerule \vspace{-6pt}]
+
+\ifPDFTeX\pdfgentounicode=1\fi
+
+\newcommand{\resumeItem}[1]{\item \small{#1 \vspace{-3pt}}}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{-2pt}\item
+\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+\textbf{#1} & \small #2 \\
+\textit{\small #3} & \textit{\small #4}
+\end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+\item
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\small #1 & \small #2
+\end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}, itemsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Rabiya Tahir}} \\
+\small Information Technology University, Lahore  \\
+\faPhone\ 0304-5222319 ~
+\faEnvelope\ \href{mailto:rabiyyatahir@gmail.com}{rabiyyatahir@gmail.com} ~
+\faLinkedin\ \href{https://www.linkedin.com/in/rabiya-tahir/}{linkedin.com/in/rabiya-tahir} ~
+\faGlobe\ \href{https://rabiya-portfolio-silk.vercel.app/}{rabiya-portfolio}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Information Technology University}{Sep 2023 -- May 2027}
+{BS Artificial Intelligence $|$ PEEF Scholarship Recipient}{Lahore}
+\resumeSubheading
+{Kinnaird College}{2021 -- 2023}
+{Intermediate (ICS) -- 89\%}{Lahore}
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Turing (via Swift Solutions)}{Oct 2024 -- Present}
+{LLM Trainer (QA) \& LLM Systems Developer}{Remote}
+\resumeItemListStart
+
+\resumeItem{\textbf{AI Trainer \& Prompt Engineer (Anthropic)} Evaluated LLM code generation for logical consistency, security compliance, and task accuracy; executed and analyzed prompt-response cycles using GitHub-based tooling; contributed to RLHF pipelines for improving model performance.}
+
+\resumeItem{\textbf{NVIDIA Multi-App Task QA} Audited single-app and multi-app LLM task prompts against a 33-rule compliance framework, evaluating execution logs for accuracy; processed $\sim$16 tasks/day.}
+
+\resumeItem{\textbf{LLM Systems Developer (DB Domain)} Designed domain-specific interaction frameworks for LLM agents: structured \textbf{policies} (e.g., GitHub workflows), \textbf{tools/APIs} (\texttt{fetch\_repo}, \texttt{create\_repo}), and a collaborative \textbf{database schema}.}
+
+\resumeItem{\textbf{Data Annotator (Meta)} Annotated structured video datasets and generated metadata used in downstream LLM training pipelines.}
+
+\resumeItem{\textbf{Agent Evaluator (Meta -- CUA)} Evaluated computer-use agents by testing real-world task execution, edge cases, and output correctness.}
+
+\resumeItemListEnd
+
+\resumeSubheading
+{Information Technology University -- Database Management System}{Feb 2025 -- June 2025}
+{Teaching Assistant}{Lahore}
+\resumeItemListStart
+\resumeItem{Mentored 40+ undergraduates in relational database design, SQL, and query optimization; held office hours and graded assignments/exams.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{CodeRush 2026 ML Competition -- \textbf{3rd Place}} $|$ GDG ITU}{2026}
+\resumeItemListStart
+\resumeItem{Built economic class classifier (Lower/Middle/Upper) on bag-structured demographic data using LightGBM + Random Forest ensemble with threshold tuning.}
+\resumeItem{Achieved Macro F1: 0.7325; engineered 198 bag-level features from 29 raw columns; improved middle-class recall by +46\% vs logistic regression baseline.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects \& Competitions}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{Visual Prompt Injection Defense for Vision-Language Models} $|$ Python, PyTorch, FastAPI, Docker}{Ongoing FYP, 2026 -- 2027}
+\resumeItemListStart
+\resumeItem{Designing a dual-layer guardrail that screens images for embedded/injected instructions before they reach a vision-language agent, preventing attackers from hijacking agent actions via manipulated images.}
+\resumeItem{Benchmarked three Layer 1 image filters (FFT, PatchCore CVPR 2022, WinCLIP CVPR 2023) on CPU across 4 datasets, using paired clean/injected controls to separate true text detection from image-type mismatch.}
+\resumeItem{PatchCore (photo memory bank) detected embedded text at AUROC 0.970 (blank-band control 0.501) vs.\ 0.28\% for FFT at 10\% FPR; zero-shot WinCLIP reached F1 0.76 on 940 images, beating a 3-method ensemble (F1 0.72).}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Live Wallpaper Dashboard} $|$ Electron, JavaScript, Win32 API, Google Calendar API}{2026}
+\resumeItemListStart
+\resumeItem{Built and shipped a Windows app rendering a live dashboard (clock, weather, calendar, alarms) behind desktop icons, with natural-language alarm parsing and Google Calendar OAuth sync; auto-updating releases via GitHub Actions CI/CD.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Local Autonomous Tool-Use Agent} $|$ Python, Ollama, Llama 3.2}{2026}
+\resumeItemListStart
+\resumeItem{Deployed fully local, air-gapped LLM agent via Ollama (3B model), eliminating external API dependency for agentic workflows.}
+\resumeItem{Built multi-turn agent loop with custom JSON function-calling to autonomously generate 4-step automation plans, removing manual data-entry bottleneck.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Prompt Injection Guardrail} $|$ Python, FastAPI, React, Docker}{2026}
+\resumeItemListStart
+\resumeItem{Full-stack guardrail layer using dual-layer FastAPI pipeline (heuristics + LLM judge) to detect prompt injection attempts before reaching agent context.}
+\resumeItem{Eval Dashboard computing Precision, Recall, F1 against synthetic attack vectors; containerized with Docker and GitHub Actions CI/CD.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{XAI Medical Decision Support System} $|$ Python, scikit-learn, SHAP, FastAPI, Streamlit}{2026}
+\resumeItemListStart
+\resumeItem{Explainable AI system on Heart Disease and Adult Income datasets; trained 4 models with SHAP for global/local prediction explanations.}
+\resumeItem{Led fairness analysis auditing demographic parity, equal opportunity, and disparate impact across sex and age groups; served via FastAPI + Streamlit.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Leadership}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{GDG ITU} $|$ \textit{Management Head}}{2024--2025}
+\resumeItemListStart
+\resumeItem{Organized and managed CodeRush 2025, a campus-wide ML competition.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{EMS ITU} $|$ \textit{Vice President}}{2024--2025}
+\resumeItemListStart
+\resumeItem{Managed society operations and led events including bonfires and welcome parties.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\small
+\begin{tabularx}{\textwidth}{@{}X X@{}}
+\textbf{Languages:} Python, C/C++, SQL, JavaScript, HTML/CSS \newline
+\textbf{Tools:} Ollama, REST APIs, Git, MySQL
+&
+\textbf{AI/ML:} LLMs, RLHF, Model Evaluation, Agentic Systems, PyTorch, HuggingFace
+\end{tabularx}
+
+\end{document}
